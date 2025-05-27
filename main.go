@@ -63,14 +63,21 @@ func parseEnums(file string) []EnumDef {
 // Шаблон для генерации enum
 const enumTemplate = `package {{.Name | lower}}
 
+// Implements:
+//
+{{- range .Values}}
+//	{{$.Name}}.{{.|title}}
+{{- end}}
 type Enum interface {
     is{{.Name}}()
 }
 {{range .Values}}
+
 type {{.|lower}} struct{}
 
 func ({{.|lower}}) is{{$.Name}}() {}
 {{end}}
+
 var (
 {{range .Values}}    {{.|title}} = {{.|lower}}{}
 {{end}})
