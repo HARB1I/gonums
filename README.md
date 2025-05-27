@@ -17,6 +17,11 @@ OUTPUT
 ```golang
 package figure
 
+// Implements:
+//
+//	figure.Square
+//	figure.Box
+//	figure.Cube
 type Enum interface {
 	isFigure()
 }
@@ -42,6 +47,11 @@ var (
 ```golang
 package size
 
+// Implements:
+//
+//	size.Small
+//	size.Medium
+//	size.Large
 type Enum interface {
 	isSize()
 }
