@@ -76,7 +76,6 @@ type {{.|lower}} struct{}
 
 func ({{.|lower}}) is{{$.Name}}() {}
 {{end}}
-
 var (
 {{range .Values}}    {{.|title}} = {{.|lower}}{}
 {{end}})
