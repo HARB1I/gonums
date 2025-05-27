@@ -24,26 +24,26 @@ package figure
 //	figure.Cube
 type Enum interface {
 	isFigure()
-	Get() string
+	String() string
 }
 
 type square struct{}
 
 func (square) isFigure() {}
 
-func (square) Get() string { return "square" }
+func (square) String() string { return "square" }
 
 type box struct{}
 
 func (box) isFigure() {}
 
-func (box) Get() string { return "box" }
+func (box) String() string { return "box" }
 
 type cube struct{}
 
 func (cube) isFigure() {}
 
-func (cube) Get() string { return "cube" }
+func (cube) String() string { return "cube" }
 
 var (
 	Square = square{}
@@ -61,26 +61,26 @@ package size
 //	size.Large
 type Enum interface {
 	isSize()
-	Get() string
+	String() string
 }
 
 type small struct{}
 
 func (small) isSize() {}
 
-func (small) Get() string { return "small" }
+func (small) String() string { return "small" }
 
 type medium struct{}
 
 func (medium) isSize() {}
 
-func (medium) Get() string { return "medium" }
+func (medium) String() string { return "medium" }
 
 type large struct{}
 
 func (large) isSize() {}
 
-func (large) Get() string { return "large" }
+func (large) String() string { return "large" }
 
 var (
 	Small  = small{}
@@ -113,7 +113,7 @@ func foo(v figure.Enum) {
 
 func bar(v figure.Enum) {
 	if v == figure.Cube {
-		println(v.Get())
+		println(v.String())
 	}
 }
 ```
