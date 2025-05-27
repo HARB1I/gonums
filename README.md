@@ -64,3 +64,32 @@ var (
 	Large  = large{}
 )
 ```
+EXAMPLE
+```golang
+package main
+
+import "test/test/generated_enums/figure"
+
+func main() {
+	foo(figure.Cube)
+
+	bar(figure.Cube)
+}
+
+func foo(v figure.Enum) {
+	switch v {
+	case figure.Cube:
+		println("cube")
+	case figure.Square:
+		println("square")
+	case figure.Box:
+		println("box")
+	}
+}
+
+func bar(v figure.Enum) {
+	if v == figure.Cube {
+		println("cube")
+	}
+}
+```
