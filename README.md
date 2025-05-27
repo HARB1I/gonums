@@ -24,19 +24,26 @@ package figure
 //	figure.Cube
 type Enum interface {
 	isFigure()
+	Get() string
 }
 
 type square struct{}
 
 func (square) isFigure() {}
 
+func (square) Get() string { return "square" }
+
 type box struct{}
 
 func (box) isFigure() {}
 
+func (box) Get() string { return "box" }
+
 type cube struct{}
 
 func (cube) isFigure() {}
+
+func (cube) Get() string { return "cube" }
 
 var (
 	Square = square{}
@@ -54,19 +61,26 @@ package size
 //	size.Large
 type Enum interface {
 	isSize()
+	Get() string
 }
 
 type small struct{}
 
 func (small) isSize() {}
 
+func (small) Get() string { return "small" }
+
 type medium struct{}
 
 func (medium) isSize() {}
 
+func (medium) Get() string { return "medium" }
+
 type large struct{}
 
 func (large) isSize() {}
+
+func (large) Get() string { return "large" }
 
 var (
 	Small  = small{}
@@ -78,7 +92,7 @@ EXAMPLE
 ```golang
 package main
 
-import "test/test/generated_enums/figure"
+import "test/generated_enums/figure"
 
 func main() {
 	foo(figure.Cube)
@@ -99,7 +113,7 @@ func foo(v figure.Enum) {
 
 func bar(v figure.Enum) {
 	if v == figure.Cube {
-		println("cube")
+		println(v.Get())
 	}
 }
 ```
