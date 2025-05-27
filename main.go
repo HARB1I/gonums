@@ -70,14 +70,14 @@ const enumTemplate = `package {{.Name | lower}}
 {{- end}}
 type Enum interface {
     is{{.Name}}()
-	Get() string
+	String() string
 }
 {{range .Values}}
 type {{.|lower}} struct{}
 
 func ({{.|lower}}) is{{$.Name}}() {}
 
-func ({{.|lower}}) Get() string { return "{{.|lower}}" }
+func ({{.|lower}}) String() string { return "{{.|lower}}" }
 {{end}}
 var (
 {{range .Values}}    {{.|title}} = {{.|lower}}{}
