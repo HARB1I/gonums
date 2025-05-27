@@ -17,7 +17,7 @@ OUTPUT
 ```golang
 package figure
 
-type Figure interface {
+type Enum interface {
 	isFigure()
 }
 
@@ -42,7 +42,7 @@ var (
 ```golang
 package size
 
-type Size interface {
+type Enum interface {
 	isSize()
 }
 
