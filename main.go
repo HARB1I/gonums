@@ -66,13 +66,12 @@ const enumTemplate = `package {{.Name | lower}}
 // Implements:
 //
 {{- range .Values}}
-//	{{$.Name}}.{{.|title}}
+//	{{$.Name | lower}}.{{.|title}}
 {{- end}}
 type Enum interface {
     is{{.Name}}()
 }
 {{range .Values}}
-
 type {{.|lower}} struct{}
 
 func ({{.|lower}}) is{{$.Name}}() {}
