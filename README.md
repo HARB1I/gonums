@@ -113,7 +113,7 @@ func foo(v figure.Enum) {
 
 func bar(v figure.Enum) {
 	if v == figure.Cube {
-		println(v.String())
+		println(v)
 	}
 }
 ```
